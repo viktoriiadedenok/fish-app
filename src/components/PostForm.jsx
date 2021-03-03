@@ -2,17 +2,24 @@ import React from "react";
 import ".././App.css";
 
 const PostForm = (props) => { 
-  let state = {
-    title: ""
-  }
-const submitHandler= event => {
-  event.persists()
-  event.preventDefault()
- }
+  let state = 
+    {title: ''};
+  
  
-const changeInput =  event => {
-    state.title += String(event.target.value);
-   console.log(event.target.value)
+  const submitHandler = event => {
+  event.preventDefault()
+  const {title} = state;
+  const newPost = {
+   title, id: Date.now().toString()
+   }
+   console.log(newPost)
+
+  }
+
+  const changeInput =  event => {
+    state = ({title: event.target.value});
+    console.log(state.title)
+
   }
   
   return (
@@ -22,7 +29,7 @@ const changeInput =  event => {
         <input 
           type="text"
           id="title"
-          value={state.title}
+          title={state.title}
           name="title"
           onChange={changeInput}
           />      
