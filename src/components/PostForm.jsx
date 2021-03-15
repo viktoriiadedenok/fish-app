@@ -1,5 +1,7 @@
 import React from "react";
-import ".././App.css";
+
+import {connect} from "react-redux";
+import createPost from "../redux/actions";
 
 const PostForm = (props) => { 
   let state = 
@@ -8,18 +10,23 @@ const PostForm = (props) => {
  
   const submitHandler = event => {
   event.preventDefault()
+  
   const {title} = state;
-  const newPost = {
-   title, id: Date.now().toString()
-   }
-   console.log(newPost)
+ 
+  if (!title.trim()){
+    return
+  }
 
+   const newPost = {
+   title, id: Date.now().toString()
+   } 
+
+   props.createPost(newPost); //dispatch
   }
 
   const changeInput =  event => {
     state = ({title: event.target.value});
-    console.log(state.title)
-
+   
   }
   
   return (
@@ -27,6 +34,7 @@ const PostForm = (props) => {
       <div className="input">   
         <label htmlFor="title"></label>
         <input 
+        className="mt-3"
           type="text"
           id="title"
           title={state.title}
@@ -34,9 +42,13 @@ const PostForm = (props) => {
           onChange={changeInput}
           />      
       </div>
-      <button type="submit">Push the message</button>  
+      <button type="submit" className="btn btn-secondary mt-3">Push the message</button>  
     </form>
   );
 };
 
-export default PostForm;
+const mapDispatchToProps = {
+ createPost
+}
+
+export default connect(null, mapDispatchToProps)(PostForm);

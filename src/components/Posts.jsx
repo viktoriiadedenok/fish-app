@@ -1,15 +1,26 @@
 import React from "react";
-import ".././App.css";
 import Post from "./Post";
+import {connect} from "react-redux";
 
-const Posts = ({posts}) => {
-  if(!posts.length){
+const Posts = ({syncPost}) => {
+
+  if(!syncPost.length){
     return(
-      <div>No posts are here</div>
+      <p className="mt-2 p-3 mb-2 bg-danger text-white">No posts are here yet.</p>
     )
   }
-  return posts.map(post => <Post post={post} key={post}/>)
-  
+
+
+    return (<table className="table"> {syncPost.map(post => <div className=""><Post  post={post} key={post.id}/></div>)}</table>)
+
 };
 
-export default Posts;
+const mapStateToProps = state =>{
+
+  return {
+    syncPost: state.post.posts
+  }
+  
+}
+
+export default connect(mapStateToProps, null)(Posts);
