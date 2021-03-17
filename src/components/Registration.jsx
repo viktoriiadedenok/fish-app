@@ -1,17 +1,43 @@
 import React from "react";
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 
- 
+
 const Registration = () =>{
-    return(<div>
-    <input className="form-control form-control-sm mb-2" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"/>
-    <input className="form-control form-control-sm mb-2" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"/>
-    <div class="input-group mb-3">
-  <input type="text" className="form-control " placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2"/>
-  <button className="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-</div>
+    return(
     
-
-    </div>
+    <MDBContainer>
+      <MDBRow>
+        <MDBCol md="6" className="mx-auto">
+          <form>
+            <p className="h4 text-center mb-4">Sign up</p>
+            <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
+              Your name
+            </label>
+            <input type="text" id="defaultFormRegisterNameEx" className="form-control" />
+            <br />
+            <label htmlFor="defaultFormRegisterEmailEx" className="grey-text">
+              Your email
+            </label>
+            <input type="email" id="defaultFormRegisterEmailEx" className="form-control" />
+            <br />
+            <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
+              Your password
+            </label>
+            <input type="password" id="defaultFormRegisterPasswordEx" className="form-control" />
+            <br />
+            <label htmlFor="defaultFormRegisterPasswordEx" className="grey-text">
+              Confirm password
+            </label>
+            <input type="password" id="defaultFormRegisterPasswordEx" className="form-control" />
+            <div className="text-center mt-4">
+              <MDBBtn color="green" type="submit">
+                Register
+              </MDBBtn>
+            </div>
+          </form>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
     )
 };
 export default Registration;

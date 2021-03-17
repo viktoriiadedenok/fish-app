@@ -6,6 +6,9 @@ import { render } from "react-dom";
 import { compose, createStore } from "redux";
 import { Provider } from "react-redux";
 import { rootReducer } from "./redux/rootReducer";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 const store = createStore(
   rootReducer,

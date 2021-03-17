@@ -1,38 +1,30 @@
 import PostForm from "./components/PostForm";
 import Posts from "./components/Posts";
-import Auth from "./components/Authentication";
 import Registration from "./components/Registration";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import LogIn from "./components/Login";
 
 function App() {
   return (
     <Router>
-      <div className="container-md">
-        <ul>
-          <li>
-            <Link className="text-muted" to="/">
-              Main
-            </Link>
-          </li>
-          <li>
-            <Link className="text-muted" to="/auth">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link className="text-muted" to="/registration">
-              Registration
-            </Link>
-          </li>
-        </ul>
+      <div className="container-md mx-auto">
+        {/* <Link className="text-muted mr-3" to="/">
+            Main
+          </Link> */}
+        <Link className="text-muted mr-3" to="/">
+          Log in
+        </Link>
+        {/* <Link className="text-muted" to="/registration">
+            Registration
+          </Link> */}
         <Switch>
           <Route exact path="/">
+            <LogIn />
+          </Route>
+          <Route path="/list">
             <PostForm />
             <Posts />
-          </Route>
-          <Route path="/auth">
-            <Auth />
           </Route>
           <Route path="/registration">
             <Registration />
