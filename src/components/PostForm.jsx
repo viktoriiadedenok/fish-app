@@ -29,20 +29,22 @@ const PostForm = (props) => {
   }
   
   return (
-    <form onSubmit={submitHandler}>
+    <div className="d-flex justify-content-center">
+    <form  className="" onSubmit={submitHandler}>
       <div className="input">   
         <label htmlFor="title"></label>
         <input 
-        className="mt-3"
+        className="form-control form-control-lg"
           type="text"
           id="title"
           title={state.title}
           name="title"
           onChange={changeInput}
           />      
-      </div>
-      <button type="submit" className="btn btn-secondary mt-3">Push the message</button>  
+      </div>  
+      <div className="text-center"><button type="submit"  className="btn btn-secondary mt-3">Add to list</button>  </div>
     </form>
+    </div>
   );
 };
 

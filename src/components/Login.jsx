@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 const LogIn = () => {
   return (
-      <MDBContainer>
+      <MDBContainer >
         <MDBRow>
           <MDBCol md="6" className="mx-auto">
             <form>
-              <p className="h4 text-center mb-4">Sign in</p>
+              <p className="h4 text-center text-muted mb-4">Sign in</p>
               <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
                 Your email
               </label>
