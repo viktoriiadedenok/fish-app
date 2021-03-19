@@ -1,49 +1,38 @@
 import React from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from "mdbreact";
-import { Link } from "react-router-dom";
+import  ".././index.css";
+import {  Link } from "react-router-dom";
 
 const LogIn = () => {
-  return (
-      <MDBContainer >
-        <MDBRow>
-          <MDBCol md="6" className="mx-auto">
-            <form>
-              <p className="h4 text-center text-muted mb-4">Sign in</p>
-              <label htmlFor="defaultFormLoginEmailEx" className="grey-text">
-                Your email
-              </label>
-              <input
-                type="email"
-                id="defaultFormLoginEmailEx"
-                className="form-control"
-              />
-              <br />
-              <label htmlFor="defaultFormLoginPasswordEx" className="grey-text">
-                Your password
-              </label>
-              <input
-                type="password"
-                id="defaultFormLoginPasswordEx"
-                className="form-control"
-              />
-                <Link to="/list"> 
-              <div className="text-center mt-4">
-                <MDBBtn color="indigo" type="submit">
-                Login
-                </MDBBtn>
+      return (
+
+
+        <div className="auth-wrapper">
+        <div className="auth-inner">
+          <form>
+              <h3>Sign In</h3>
+              <div className="form-group">
+                  <label>Email address</label>
+                  <input type="email" className="form-control" placeholder="Enter email" />
               </div>
-              </Link>
-            </form>
-           <p className="font-small grey-text d-flex justify-content-center mt-5">
-              Don't have an account?
-              <Link className="ml-2" to="/registration">
-                  Register
-              </Link>
-            </p>
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-  );
-};
+              <div className="form-group">
+                  <label>Password</label>
+                  <input type="password" className="form-control" placeholder="Enter password" />
+              </div>
+              <div className="form-group">
+                  <div className="custom-control custom-checkbox">
+                      <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                      <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                  </div>
+              </div>
+         
+              <button type="submit" className="btn btn-primary btn-block"><Link to="/my-list" className="text-white"> submit</Link></button>
+              <p className="forgot-password text-right">
+                  Forgot <a href="#">password?</a>
+              </p>
+          </form>
+          </div>
+          </div>
+      );
+  }
 
 export default LogIn;

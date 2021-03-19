@@ -5,14 +5,13 @@ import {connect} from "react-redux";
 const Posts = ({syncPost}) => {
 
   if(!syncPost.length){
-    return(
-      <p className="mt-2 p-3 mb-2 bg-danger text-white">No posts are here yet.</p>
-    )
+    return <p className="p-1 mb-2 bg-secondary text-white mt-2 text-center rounded">No posts are here yet.</p>
   }
 
 
-    return (<table className="table"> {syncPost.map(post => <div className=""><Post  post={post} key={post.id}/></div>)}</table>)
-
+    return (
+    <table className="table"> {syncPost.map(post => <div className=""><Post  post={post} key={post.id}/></div>)}</table>)
+    
 };
 
 const mapStateToProps = state =>{

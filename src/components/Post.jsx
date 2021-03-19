@@ -3,7 +3,7 @@ import React from "react";
   
 const Post = ({post})=>{
     return(
-        <p className="mt-3 p-3 mb-2 bg-info text-dark">{post.title} </p>
+     <strong><p className="mt-3 p-2 mb-2 border border-primary rounded text-muted">{post.title} </p></strong> 
     )
 }
  export default Post;

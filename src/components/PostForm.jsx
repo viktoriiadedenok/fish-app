@@ -6,7 +6,7 @@ const PostForm = (props) => {
   let state = 
     {title: ''};
   
- 
+
   const submitHandler = event => {
   event.preventDefault()
   
@@ -42,7 +42,7 @@ const PostForm = (props) => {
           onChange={changeInput}
           />      
       </div>  
-      <div className="text-center"><button type="submit"  className="btn btn-secondary mt-3">Add to list</button>  </div>
+      <div className="text-center"><button type="submit"  className="btn btn-md btn-primary mt-2">Add to list</button>  </div>
     </form>
     </div>
   );
